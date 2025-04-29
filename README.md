@@ -1,6 +1,9 @@
 # lds_dev_client
 
-A lightweight utility package for getting the hostname for LearningDeck Client Web.
+[![npm version](https://img.shields.io/npm/v/lds_dev_client.svg)](https://www.npmjs.com/package/lds_dev_client)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A lightweight utility package that extracts the hostname and port from the current URL.
 
 ## Installation
 
@@ -43,6 +46,52 @@ MIT
 ## Author
 
 Your Name
+
+## Examples
+
+Here's a simple example showing how to use the package in a React application:
+
+```jsx
+import React from 'react';
+import { HostAddress, HostPort } from 'lds_dev_client';
+
+function ServerInfo() {
+  return (
+    <div className="server-info">
+      <h3>Server Information</h3>
+      <p>Connected to: {HostAddress}</p>
+      <p>Port: {HostPort}</p>
+    </div>
+  );
+}
+
+export default ServerInfo;
+```
+
+## API Reference
+
+### Constants
+
+| Name | Type | Description |
+|------|------|-------------|
+| `HostAddress` | String | The hostname from the current URL (e.g., "localhost", "example.com") |
+| `HostPort` | Number | The port number from the URL, or default port (80 for HTTP, 443 for HTTPS) |
+
+### Functions
+
+| Name | Return Type | Description |
+|------|-------------|-------------|
+| `getHost()` | String | Function to get the hostname dynamically |
+| `getPort()` | Number | Function to get the port dynamically |
+
+## Browser Compatibility
+
+This package is designed for browser environments and has been tested with:
+
+- Chrome 85+
+- Firefox 80+
+- Safari 14+
+- Edge 85+
 
 ## Contributing
 
